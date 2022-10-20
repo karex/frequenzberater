@@ -1,6 +1,6 @@
 # FrequenzBerater
 
-Get lemma frequencies from the [NoWaC frequency list](https://www.hf.uio.no/iln/english/about/organization/text-laboratory/services/nowac-frequency.html) and append it your file. Dictionaty cleaned and licenced under [CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/).
+Get lemma frequencies from the [NoWaC frequency list](https://www.hf.uio.no/iln/english/about/organization/text-laboratory/services/nowac-frequency.html) and append it your file. Dictionary cleaned and licensed under [CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/).
 
 Usage:
 ```
