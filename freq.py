@@ -41,13 +41,16 @@ else:
 
 dict = {}
 
+def get_key(elements):
+  return elements[1].replace("$", "") + "-" + re.sub(r"_(.*)", "", elements[2].replace("\n", ""))
+
 print("Building dictionary", end="", flush=True)
 
 with open("dict.tsv", encoding = "utf8", mode = "r") as f:
   lines = f.readlines()
   for line in lines:
     elements = line.split("\t")
-    key = elements[1].replace("$", "") + "-" + re.sub(r"_(.*)", "", elements[2].replace("\n", ""))
+    key = get_key(elements)
     dict[key] = elements[0]
     if (len(dict) % 100000 == 0):
       print(".", end="", flush=True)
@@ -63,7 +66,7 @@ with open(outputfile, encoding = "utf8", mode = "w") as outputf:
     lines = inputf.readlines()
     for line in lines:
       elements = line.split("\t")
-      key = elements[1].replace("$", "") + "-" + re.sub(r"_(.*)", "", elements[2].replace("\n", ""))
+      key = get_key(elements)
       if (key in dict):
         outputf.write(dict[key] + "\t" + line)
       else:
@@ -74,6 +77,3 @@ with open(outputfile, encoding = "utf8", mode = "w") as outputf:
     print("\nFrBr run finished.\nProcessed", linecount, "lines.\nNo dictionary entry for", errcount, "lemmas.\nBye!")
     inputf.close()
   outputf.close()
-  
-#for line in dict:
-#  print(line)
