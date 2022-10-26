@@ -46,7 +46,7 @@ def get_key(elements):
 
 print("Building dictionary", end="", flush=True)
 
-with open("dict.tsv", encoding = "utf8", mode = "r") as f:
+with open("dict.tsv", encoding="utf8", mode="r") as f:
   lines = f.readlines()
   for line in lines:
     elements = line.split("\t")
@@ -61,8 +61,8 @@ print("\nDictionary built with", len(dict), "lemmas.\n")
 linecount = 0
 errcount = 0
 
-with open(outputfile, encoding = "utf8", mode = "w") as outputf:
-  with open(inputfile, encoding = "utf8", mode = "r") as inputf:
+with open(outputfile, encoding="utf8", mode="w") as outputf:
+  with open(inputfile, encoding="utf8", mode="r") as inputf:
     lines = inputf.readlines()
     for line in lines:
       elements = line.split("\t")
